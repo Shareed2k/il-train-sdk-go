@@ -7,19 +7,13 @@ Use this SDK for checking your own train schedule, integrating with Alexa, and s
 ## Installing
 
 ```sh
-go get github.com/shareed2k/il-train-sdk-go
+go get github.com/Shareed2k/il-train-sdk-go
 ```
 
 ## Usage
 ```golang
 func main() {
-	client := api.New(
-		api.WithClient(
-			client.New(
-				client.WithLogger(log.New(os.Stderr, "", log.LstdFlags)),
-			),
-		),
-	)
+	client := api.New()
 
 	// Time out if it takes more than 10 seconds.
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
